@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+*{
+	margin:0px;
+    padding:0px;
+}
+
+.name{
+  font-size: 20px;
+  font-family: 'Arimo', sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin-top: 25px;
+}
+
+.description{
+  font-size: 17px;
+font-family: 'Arimo', sans-serif;
+  letter-spacing: -1px;
+}
+
+.cta{
+  display:inline-block;
+  font-size: 15px;
+  font-family: 'Arimo', sans-serif;
+  color: #fff;
+  background-color: #2c9a2c;
+  padding: 3px 15px 3px 15px;
+  margin-top: 7px;
+  margin-bottom: 8px;
+}
+
+.nr{
+  font-size: 11px;
+  font-family: 'Arimo', sans-serif;
+  font-weight: 400;
+}
+
+</style>
+
+<div id="carusel">
+
+</div>
+
+<script>
+
+var items = ["34563", "26474", "24562", "24577", "13456", "67968"];
+
+createItem();
+
+function createItem(){
+	for(i = 0; i < items.length; i++){
+
+    var idNr = i + 1
+    var id = "item" + idNr;
+
+    var element = document.getElementById("carusel");
+var item = document.createElement("div");
+item.setAttribute("id", id);
+element.appendChild(item);
+var createdItem = document.getElementById(id);
+
+var title = document.createElement("p");
+var node = document.createTextNode("This is new.");;
+title.setAttribute("class", "name");
+title.appendChild(node);
+
+var headline = document.createElement("h1");
+var textNode = document.createTextNode("This is description.");
+headline.appendChild(textNode);
+headline.setAttribute("class", "description");
+
+var cta = document.createElement("p");
+var ctaTextNode = document.createTextNode("köp nu");
+cta.appendChild(ctaTextNode);
+cta.setAttribute("class", "cta");
+
+var nr = document.createElement("p");
+var bestNr = "Best nr " + items[i];
+var nrTextNode = document.createTextNode(bestNr);
+nr.appendChild(nrTextNode);
+nr.setAttribute("class", "nr");
+
+createdItem.appendChild(title);
+createdItem.appendChild(headline);
+createdItem.appendChild(cta);
+createdItem.appendChild(nr);
+}
+
+var hello = document.getElementById('carusel');
+
+console.log(hello);
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>
