@@ -54,6 +54,32 @@ font-family: 'Arimo', sans-serif;
 
 <script>
 
+// Create an object:
+var car = {
+  pause_Nedd : { someProperty : "prop81", someOther : "prop28" },
+  pause_lol : { someProperty : "prop31", someOther : "prop32" },
+  pause_ba : { someProperty : "prop61", someOther : "prop62" },
+  pause_button : { someProperty : "prop1", someOther : "prop2" },
+  resume_button : { resumeProp : "Brop", resumeProp2 : false }
+  };
+
+// Display some data from the object:
+document.getElementById("demo").innerHTML = "The car type is " + car.resume_button.resumeProp;
+
+for (var key in car) {
+    // skip loop if the property is from prototype
+    if (!car.hasOwnProperty(key)) continue;
+        console.log(key);
+    var obj = car[key];
+    for (var prop in obj) {
+        // skip loop if the property is from prototype
+        if(!obj.hasOwnProperty(prop)) continue;
+
+        // your code
+        console.log(prop + " = " + obj[prop]);
+    }
+}
+
 var items = ["34563", "26474", "24562", "24962", "27474", "22274"];
 
 createItem();
