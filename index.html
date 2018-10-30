@@ -61,12 +61,18 @@ var items = {
   24562 : { title : "prop61", description : "prop62", description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28" },
   27474 : { title : "prop1", description : "prop2",   description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28" },
   22274 : { title : "Broddp", description : false ,   description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28"}
-  };
+};
+
+var element = document.getElementById("carusel");
 
 for (var key in items) {
     // skip loop if the property is from prototype
     if (!items.hasOwnProperty(key)) continue;
         console.log(key);
+
+
+
+
     var obj = items[key];
     for (var prop in obj) {
         // skip loop if the property is from prototype
@@ -79,46 +85,47 @@ for (var key in items) {
 
 var items = ["34563", "34563", "24562", "24962", "27474", "22274"];
 
+
+
 createItem();
 
 function createItem(){
 	for(i = 0; i < items.length; i++){
 
-    var idNr = i + 1
-    var id = "item" + idNr;
+  var idNr = i + 1
+  var id = "item" + idNr;
 
-    var element = document.getElementById("carusel");
-var item = document.createElement("div");
-item.setAttribute("id", id);
-element.appendChild(item);
-var createdItem = document.getElementById(id);
+  var item = document.createElement("div");
+  item.setAttribute("id", id);
+  element.appendChild(item);
+  var createdItem = document.getElementById(id);
 
-var title = document.createElement("p");
-var node = document.createTextNode("This is new.");;
-title.setAttribute("class", "name");
-title.appendChild(node);
+  var title = document.createElement("p");
+  var node = document.createTextNode("This is new.");;
+  title.setAttribute("class", "name");
+  title.appendChild(node);
 
-var headline = document.createElement("h1");
-var textNode = document.createTextNode("This is description.");
-headline.appendChild(textNode);
-headline.setAttribute("class", "description");
+  var headline = document.createElement("h1");
+  var textNode = document.createTextNode("This is description.");
+  headline.appendChild(textNode);
+  headline.setAttribute("class", "description");
 
-var cta = document.createElement("p");
-var ctaTextNode = document.createTextNode("köp nu");
-cta.appendChild(ctaTextNode);
-cta.setAttribute("class", "cta");
+  var cta = document.createElement("p");
+  var ctaTextNode = document.createTextNode("köp nu");
+  cta.appendChild(ctaTextNode);
+  cta.setAttribute("class", "cta");
 
-var nr = document.createElement("p");
-var bestNr = "Best nr " + items[i];
-var nrTextNode = document.createTextNode(bestNr);
-nr.appendChild(nrTextNode);
-nr.setAttribute("class", "nr");
+  var nr = document.createElement("p");
+  var bestNr = "Best nr " + items[i];
+  var nrTextNode = document.createTextNode(bestNr);
+  nr.appendChild(nrTextNode);
+  nr.setAttribute("class", "nr");
 
-createdItem.appendChild(title);
-createdItem.appendChild(headline);
-createdItem.appendChild(cta);
-createdItem.appendChild(nr);
-}
+  createdItem.appendChild(title);
+  createdItem.appendChild(headline);
+  createdItem.appendChild(cta);
+  createdItem.appendChild(nr);
+  }
 
 var hello = document.getElementById('carusel');
 
