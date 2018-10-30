@@ -55,22 +55,19 @@ font-family: 'Arimo', sans-serif;
 <script>
 
 // Create an object:
-var car = {
-  pause_Nedd : { someProperty : "prop81", someOther : "prop28" },
-  pause_lol : { someProperty : "prop31", someOther : "prop32" },
-  pause_ba : { someProperty : "prop61", someOther : "prop62" },
-  pause_button : { someProperty : "prop1", someOther : "prop2" },
-  resume_button : { resumeProp : "Brop", resumeProp2 : false }
+var items = {
+  34563 : { title : "prop81", description : "prop28", description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28" },
+  34543 : { title : "prop31", description : "prop32", description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28" },
+  24562 : { title : "prop61", description : "prop62", description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28" },
+  27474 : { title : "prop1", description : "prop2",   description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28" },
+  22274 : { title : "Broddp", description : false ,   description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28"}
   };
 
-// Display some data from the object:
-document.getElementById("demo").innerHTML = "The car type is " + car.resume_button.resumeProp;
-
-for (var key in car) {
+for (var key in items) {
     // skip loop if the property is from prototype
-    if (!car.hasOwnProperty(key)) continue;
+    if (!items.hasOwnProperty(key)) continue;
         console.log(key);
-    var obj = car[key];
+    var obj = items[key];
     for (var prop in obj) {
         // skip loop if the property is from prototype
         if(!obj.hasOwnProperty(prop)) continue;
@@ -80,7 +77,7 @@ for (var key in car) {
     }
 }
 
-var items = ["34563", "26474", "24562", "24962", "27474", "22274"];
+var items = ["34563", "34563", "24562", "24962", "27474", "22274"];
 
 createItem();
 
