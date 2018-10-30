@@ -101,30 +101,32 @@ function createItem(){
   var createdItem = document.getElementById(id);
 
   var title = document.createElement("p");
-  var node = document.createTextNode("This is new.");;
-  title.setAttribute("class", "name");
-  title.appendChild(node);
-
   var headline = document.createElement("h1");
-  var textNode = document.createTextNode("This is description.");
-  headline.appendChild(textNode);
-  headline.setAttribute("class", "description");
-
   var cta = document.createElement("p");
-  var ctaTextNode = document.createTextNode("köp nu");
-  cta.appendChild(ctaTextNode);
-  cta.setAttribute("class", "cta");
-
   var nr = document.createElement("p");
+
+  var node = document.createTextNode("This is new.");
+  var textNode = document.createTextNode("This is description.");
+  var ctaTextNode = document.createTextNode("köp nu");
   var bestNr = "Best nr " + items[i];
   var nrTextNode = document.createTextNode(bestNr);
-  nr.appendChild(nrTextNode);
-  nr.setAttribute("class", "nr");
 
   createdItem.appendChild(title);
   createdItem.appendChild(headline);
   createdItem.appendChild(cta);
   createdItem.appendChild(nr);
+
+  title.appendChild(node);
+  headline.appendChild(textNode);
+  cta.appendChild(ctaTextNode);
+  nr.appendChild(nrTextNode);
+
+  title.setAttribute("class", "name");
+  headline.setAttribute("class", "description");
+  cta.setAttribute("class", "cta");
+  nr.setAttribute("class", "nr");
+
+
   }
 
 var hello = document.getElementById('carusel');
