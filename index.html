@@ -125,8 +125,10 @@
             // skip loop if the property is from prototype
             if (!items.hasOwnProperty(key)) continue;
 
-            var obj = key;
-            id = obj;
+
+            id = key;
+
+            var obj = items[key];
 
             var item = document.createElement("div");
             item.setAttribute("id", id);
@@ -136,19 +138,18 @@
             var headline = document.createElement("h1");
             var cta = document.createElement("p");
             var nr = document.createElement("p");
+            var titleText = document.createTextNode(obj.title);
+            var textNode = document.createTextNode(obj.description);
+            var ctaTextNode = document.createTextNode(obj.cta);
+            var bestNr = "Best nr " + id;
+            var nrTextNode = document.createTextNode(bestNr);
 
-            for (var prop in key) {
-            console.log(prop);
+            for (var prop in obj) {
+
               // skip loop if the property is from prototype
               if (!obj.hasOwnProperty(prop)) continue;
 
             }
-
-            var titleText = document.createTextNode("This is new.");
-            var textNode = document.createTextNode("This is description.");
-            var ctaTextNode = document.createTextNode("köp nu");
-            var bestNr = "Best nr " + id;
-            var nrTextNode = document.createTextNode(bestNr);
 
             createdItem.appendChild(title);
             createdItem.appendChild(headline);
