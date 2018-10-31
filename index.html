@@ -10,187 +10,187 @@
 
 <body>
 
-  <style>
-    * {
-      margin: 0px;
-      padding: 0px;
-    }
+<style>
+* {
+  margin: 0px;
+  padding: 0px;
+}
 
-    .name {
-      font-size: 20px;
-      font-family: 'Arimo', sans-serif;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -1px;
-      margin-top: 25px;
-    }
+.name {
+  font-size: 20px;
+  font-family: 'Arimo', sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin-top: 25px;
+}
 
-    .description {
-      font-size: 17px;
-      font-family: 'Arimo', sans-serif;
-      letter-spacing: -1px;
-    }
+.description {
+  font-size: 17px;
+  font-family: 'Arimo', sans-serif;
+  letter-spacing: -1px;
+}
 
-    .cta {
-      display: inline-block;
-      font-size: 15px;
-      font-family: 'Arimo', sans-serif;
-      color: #fff;
-      background-color: #2c9a2c;
-      padding: 3px 15px 3px 15px;
-      margin-top: 7px;
-      margin-bottom: 8px;
-    }
+.cta {
+  display: inline-block;
+  font-size: 15px;
+  font-family: 'Arimo', sans-serif;
+  color: #fff;
+  background-color: #2c9a2c;
+  padding: 3px 15px 3px 15px;
+  margin-top: 7px;
+  margin-bottom: 8px;
+}
 
-    .nr {
-      font-size: 11px;
-      font-family: 'Arimo', sans-serif;
-      font-weight: 400;
-    }
-  </style>
+.nr {
+  font-size: 11px;
+  font-family: 'Arimo', sans-serif;
+  font-weight: 400;
+}
+</style>
 
-  <div id="carusel">
+<div id="carusel">
 
-  </div>
+</div>
 
   <script>
-    // Create an object:
-    var items = {
-      34563: {
-        title: "yeeeah",
-        description: "prop28",
-        description: "prop28",
-        cta: "prop28",
-        ctaHref: "prop28",
-        bestNr: "prop28",
-        price: "prop28",
-        imageSrc: "prop28"
-      },
-      34543: {
-        title: "prop31",
-        description: "prop32",
-        description: "prop28",
-        cta: "prop28",
-        ctaHref: "prop28",
-        bestNr: "prop28",
-        price: "prop28",
-        imageSrc: "prop28"
-      },
-      24562: {
-        title: "prop61",
-        description: "prop62",
-        description: "prop28",
-        cta: "prop28",
-        ctaHref: "prop28",
-        bestNr: "prop28",
-        price: "prop28",
-        imageSrc: "prop28"
-      },
-      27474: {
-        title: "ohhyrea",
-        description: "prop2",
-        description: "prop28",
-        cta: "prop28",
-        ctaHref: "prop28",
-        bestNr: "prop28",
-        price: "prop28",
-        imageSrc: "prop28"
-      },
-      22274: {
-        title: "Broddp",
-        description: false,
-        description: "prop28",
-        cta: "prop28",
-        ctaHref: "prop28",
-        bestNr: "prop28",
-        price: "prop28",
-        imageSrc: "prop28"
-      }
-    };
+// Create an object:
+var items = {
+  34563: {
+    title: "yeeeah",
+    description: "prop28",
+    description: "prop28",
+    cta: "prop28",
+    ctaHref: "prop28",
+    bestNr: "prop28",
+    price: "prop28",
+    imageSrc: "prop28"
+  },
+  34543: {
+    title: "prop31",
+    description: "prop32",
+    description: "prop28",
+    cta: "prop28",
+    ctaHref: "prop28",
+    bestNr: "prop28",
+    price: "prop28",
+    imageSrc: "prop28"
+  },
+  24562: {
+    title: "prop61",
+    description: "prop62",
+    description: "prop28",
+    cta: "prop28",
+    ctaHref: "prop28",
+    bestNr: "prop28",
+    price: "prop28",
+    imageSrc: "prop28"
+  },
+  27474: {
+    title: "ohhyea",
+    description: "prop2",
+    description: "prop28",
+    cta: "prop28",
+    ctaHref: "prop28",
+    bestNr: "prop28",
+    price: "prop28",
+    imageSrc: "prop28"
+  },
+  22274: {
+    title: "Broddp",
+    description: false,
+    description: "prop28",
+    cta: "prop28",
+    ctaHref: "prop28",
+    bestNr: "prop28",
+    price: "prop28",
+    imageSrc: "prop28"
+  }
+};
 
-    var id;
+var id;
 
-    var element = document.getElementById("carusel");
+var element = document.getElementById("carusel");
 
-    var itemsArray = ["34563", "27474"];
+var itemsArray = ["34563", "27474", "22274"];
 
-    matchItems();
+matchItems();
 
-    function matchItems() {
-      for (var item in itemsArray) {
+function matchItems() {
+  for (var item in itemsArray) {
 
-        for (var key in items) {
+    for (var key in items) {
 
-          if (itemsArray[item] == key) {
-            // skip loop if the property is from prototype
-            if (!items.hasOwnProperty(key)) continue;
+      if (itemsArray[item] == key) {
+        // skip loop if the property is from prototype
+        if (!items.hasOwnProperty(key)) continue;
 
 
-            id = key;
+        id = key;
 
-            var obj = items[key];
+        var obj = items[key];
 
-            var item = document.createElement("div");
-            item.setAttribute("id", id);
-            element.appendChild(item);
-            var createdItem = document.getElementById(id);
-            var title = document.createElement("p");
-            var headline = document.createElement("h1");
-            var cta = document.createElement("p");
-            var nr = document.createElement("p");
-            var titleText = document.createTextNode(obj.title);
-            var textNode = document.createTextNode(obj.description);
-            var ctaTextNode = document.createTextNode(obj.cta);
-            var bestNr = "Best nr " + id;
-            var nrTextNode = document.createTextNode(bestNr);
+        var item = document.createElement("div");
+        item.setAttribute("id", id);
+        element.appendChild(item);
+        var createdItem = document.getElementById(id);
+        var title = document.createElement("p");
+        var headline = document.createElement("h1");
+        var cta = document.createElement("p");
+        var nr = document.createElement("p");
+        var titleText = document.createTextNode(obj.title);
+        var textNode = document.createTextNode(obj.description);
+        var ctaTextNode = document.createTextNode(obj.cta);
+        var bestNr = "Best nr " + id;
+        var nrTextNode = document.createTextNode(bestNr);
 
-            for (var prop in obj) {
+        for (var prop in obj) {
 
-              // skip loop if the property is from prototype
-              if (!obj.hasOwnProperty(prop)) continue;
+          // skip loop if the property is from prototype
+          if (!obj.hasOwnProperty(prop)) continue;
 
-            }
-
-            createdItem.appendChild(title);
-            createdItem.appendChild(headline);
-            createdItem.appendChild(cta);
-            createdItem.appendChild(nr);
-
-            title.appendChild(titleText);
-            headline.appendChild(textNode);
-            cta.appendChild(ctaTextNode);
-            nr.appendChild(nrTextNode);
-
-            title.setAttribute("class", "name");
-            headline.setAttribute("class", "description");
-            cta.setAttribute("class", "cta");
-            nr.setAttribute("class", "nr");
-
-          }
         }
-      }
-    }
 
-    createItem();
+        createdItem.appendChild(title);
+        createdItem.appendChild(headline);
+        createdItem.appendChild(cta);
+        createdItem.appendChild(nr);
 
-    function createItem() {
-      for (i = 0; i < itemsArray.length; i++) {
+        title.appendChild(titleText);
+        headline.appendChild(textNode);
+        cta.appendChild(ctaTextNode);
+        nr.appendChild(nrTextNode);
 
-
-
-
-
-
-
-
-
-
+        title.setAttribute("class", "name");
+        headline.setAttribute("class", "description");
+        cta.setAttribute("class", "cta");
+        nr.setAttribute("class", "nr");
 
       }
-
-      var hello = document.getElementById('carusel');
-
     }
+  }
+}
+
+createItem();
+
+function createItem() {
+  for (i = 0; i < itemsArray.length; i++) {
+
+
+
+
+
+
+
+
+
+
+
+  }
+
+  var hello = document.getElementById('carusel');
+
+}
   </script>
 
 </body>
