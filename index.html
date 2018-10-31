@@ -56,15 +56,14 @@
   <script>
 // Create an object:
 var items = {
-  34563: {
-    title: "yeeeah",
-    description: "prop28",
-    description: "prop28",
-    cta: "prop28",
-    ctaHref: "prop28",
-    bestNr: "prop28",
-    price: "prop28",
-    imageSrc: "prop28"
+  5235: {
+    title: "HEATMAX LASEROVN",
+    description: "HM-DX32 3100W",
+    cta: "Læg i kurv",
+    ctaHref: "https://www.harald-nyborg.dk/p5235/termostatstyret-varmeovn-3100w",
+    bestNr: "5235",
+    price: "1.789,-",
+    imageSrc: "https://www.harald-nyborg.dk/media/images/800/5235_989548.jpg"
   },
   34543: {
     title: "prop31",
@@ -112,24 +111,18 @@ var id;
 
 var element = document.getElementById("carusel");
 
-var itemsArray = ["34563", "27474", "22274"];
+var itemsArray = ["5235", "27474", "22274"];
 
 matchItems();
 
 function matchItems() {
   for (var item in itemsArray) {
-
     for (var key in items) {
-
       if (itemsArray[item] == key) {
         // skip loop if the property is from prototype
         if (!items.hasOwnProperty(key)) continue;
-
-
         id = key;
-
         var obj = items[key];
-
         var item = document.createElement("div");
         item.setAttribute("id", id);
         element.appendChild(item);
@@ -143,14 +136,10 @@ function matchItems() {
         var ctaTextNode = document.createTextNode(obj.cta);
         var bestNr = "Best nr " + id;
         var nrTextNode = document.createTextNode(bestNr);
-
         for (var prop in obj) {
-
           // skip loop if the property is from prototype
           if (!obj.hasOwnProperty(prop)) continue;
-
         }
-
         createdItem.appendChild(title);
         createdItem.appendChild(headline);
         createdItem.appendChild(cta);
@@ -165,31 +154,9 @@ function matchItems() {
         headline.setAttribute("class", "description");
         cta.setAttribute("class", "cta");
         nr.setAttribute("class", "nr");
-
       }
     }
   }
-}
-
-createItem();
-
-function createItem() {
-  for (i = 0; i < itemsArray.length; i++) {
-
-
-
-
-
-
-
-
-
-
-
-  }
-
-  var hello = document.getElementById('carusel');
-
 }
   </script>
 
