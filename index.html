@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
 
-  <style>
-*{
-	margin:0px;
-    padding:0px;
+<style>
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-.name{
+a{
+  text-decoration: none;
+}
+
+.name {
   font-size: 20px;
   font-family: 'Arimo', sans-serif;
   font-weight: 700;
@@ -23,14 +29,14 @@
   margin-top: 25px;
 }
 
-.description{
-  font-size: 17px;
-font-family: 'Arimo', sans-serif;
+.description {
+  font-size: 16px;
+  font-family: 'Arimo', sans-serif;
   letter-spacing: -1px;
 }
 
-.cta{
-  display:inline-block;
+.cta {
+  display: inline-block;
   font-size: 15px;
   font-family: 'Arimo', sans-serif;
   color: #fff;
@@ -40,12 +46,11 @@ font-family: 'Arimo', sans-serif;
   margin-bottom: 8px;
 }
 
-.nr{
+.nr {
   font-size: 11px;
   font-family: 'Arimo', sans-serif;
   font-weight: 400;
 }
-
 </style>
 
 <div id="carusel">
@@ -56,88 +61,149 @@ font-family: 'Arimo', sans-serif;
 
 // Create an object:
 var items = {
-  34563 : { title : "prop81", description : "prop28", description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28" },
-  34543 : { title : "prop31", description : "prop32", description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28" },
-  24562 : { title : "prop61", description : "prop62", description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28" },
-  27474 : { title : "prop1", description : "prop2",   description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28" },
-  22274 : { title : "Broddp", description : false ,   description : "prop28", cta : "prop28", ctaHref : "prop28", bestNr : "prop28", price : "prop28", imageSrc : "prop28"}
+  5235: {
+    title: "HEATMAX LASEROVN HM-DX32 3100W",
+    description: "Description",
+    cta: "Læg i kurv",
+    ctaHref: "https://www.harald-nyborg.dk/p5235/termostatstyret-varmeovn-3100w",
+    bestNr: "5235",
+    price: "1.789,-",
+    imageSrc: "https://www.harald-nyborg.dk/media/images/800/5235_989548.jpg"
+  },
+  10395: {
+    title: "HANDSKER MED VARME STR L",
+    description: "Description",
+    cta: "Læg i kurv",
+    ctaHref: "https://www.harald-nyborg.dk/p10395/handsker-med-varme-str-l",
+    bestNr: "10395",
+    price: "148",
+    imageSrc: "https://www.harald-nyborg.dk/media/images/420/10395_691896.jpg"
+  },
+  6973: {
+    title: "FAMILIEMIX 900G",
+    description: "Description",
+    cta: "Læg i kurv",
+    ctaHref: "https://www.harald-nyborg.dk/p6973/familiemix-900g",
+    bestNr: "6973",
+    price: "48",
+    imageSrc: "https://www.harald-nyborg.dk/media/images/800/6973_544224.jpg"
+  },
+  1528: {
+    title: "STÅLREOL 172X75X30 4 HYLDER",
+    description: "Description",
+    cta: "Læg i kurv",
+    ctaHref: "https://www.harald-nyborg.dk/p1528/stalreol-172x75x30-4-hylder",
+    bestNr: "1528",
+    price: "79",
+    imageSrc: "https://www.harald-nyborg.dk/media/images/800/1528_330204.jpg"
+  },
+  5222: {
+    title: "VILDFUGLEBLANDING 15 KG",
+    description: "Description",
+    cta: "Læg i",
+    ctaHref: "https://www.harald-nyborg.dk/p5222/vildfugleblanding-15-kg",
+    bestNr: "5222",
+    price: "59,50",
+    imageSrc: "https://www.harald-nyborg.dk/media/images/800/5222_341715.jpg"
+  }
 };
+
+var id;
+
+var itemsArray = ["5235", "10395", "5222"];
 
 var element = document.getElementById("carusel");
 
-for (var key in items) {
-    // skip loop if the property is from prototype
-    if (!items.hasOwnProperty(key)) continue;
-        console.log(key);
 
 
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = "favItems =" + itemsArray + ";" + cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
-    var obj = items[key];
-    for (var prop in obj) {
-        // skip loop if the property is from prototype
-        if(!obj.hasOwnProperty(prop)) continue;
-
-        // your code
-        console.log(prop + " = " + obj[prop]);
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+        alert("Welcome again " + user);
+    } else {
+       user = prompt("Please enter your name:","");
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
     }
 }
 
-var items = ["34563", "34563", "24562", "24962", "27474", "22274"];
+checkCookie();
 
 
 
-createItem();
+matchItems();
 
-function createItem(){
-	for(i = 0; i < items.length; i++){
+function matchItems() {
+  for (var item in itemsArray) {
+    for (var key in items) {
+      if (itemsArray[item] == key) {
+        // skip loop if the property is from prototype
+        if (!items.hasOwnProperty(key)) continue;
+        id = key;
+        var obj = items[key];
+        var item = document.createElement("div");
+        item.setAttribute("id", id);
+        element.appendChild(item);
+        var createdItem = document.getElementById(id);
+        var title = document.createElement("p");
+        var headline = document.createElement("h1");
+        var cta = document.createElement("a");
+        var nr = document.createElement("p");
+        var titleText = document.createTextNode(obj.title);
+        var textNode = document.createTextNode(obj.description);
+        var ctaTextNode = document.createTextNode(obj.cta);
+        var bestNr = "Best nr " + id;
+        var nrTextNode = document.createTextNode(bestNr);
+        for (var prop in obj) {
+          // skip loop if the property is from prototype
+          if (!obj.hasOwnProperty(prop)) continue;
+        }
+        createdItem.appendChild(title);
+        createdItem.appendChild(headline);
+        createdItem.appendChild(cta);
+        createdItem.appendChild(nr);
 
-  var idNr = i + 1
-  var id = "item" + idNr;
+        title.appendChild(titleText);
+        headline.appendChild(textNode);
+        cta.appendChild(ctaTextNode);
+        nr.appendChild(nrTextNode);
 
-  var item = document.createElement("div");
-  item.setAttribute("id", id);
-  element.appendChild(item);
-  var createdItem = document.getElementById(id);
-
-  var title = document.createElement("p");
-  var headline = document.createElement("h1");
-  var cta = document.createElement("p");
-  var nr = document.createElement("p");
-
-  var node = document.createTextNode("This is new.");
-  var textNode = document.createTextNode("This is description.");
-  var ctaTextNode = document.createTextNode("köp nu");
-  var bestNr = "Best nr " + items[i];
-  var nrTextNode = document.createTextNode(bestNr);
-
-  createdItem.appendChild(title);
-  createdItem.appendChild(headline);
-  createdItem.appendChild(cta);
-  createdItem.appendChild(nr);
-
-  title.appendChild(node);
-  headline.appendChild(textNode);
-  cta.appendChild(ctaTextNode);
-  nr.appendChild(nrTextNode);
-
-  title.setAttribute("class", "name");
-  headline.setAttribute("class", "description");
-  cta.setAttribute("class", "cta");
-  nr.setAttribute("class", "nr");
-
-
+        title.setAttribute("class", "name");
+        headline.setAttribute("class", "description");
+        cta.setAttribute("class", "cta");
+        cta.setAttribute('href',obj.ctaHref);
+        cta.setAttribute('target', '_blank');
+        nr.setAttribute("class", "nr");
+      }
+    }
   }
-
-var hello = document.getElementById('carusel');
-
 }
-
-
-
-
-
 </script>
 
 </body>
+
 </html>
