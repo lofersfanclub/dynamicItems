@@ -25,7 +25,7 @@ function checkCookie() {
     var user=getCookie("retargetItems");
     if (user != "") {
         itemsArray = user.split(",");
-        console.log(typeof itemsArray);
+        console.log(itemsArray);
         matchItems();
     } else {
            setCookie("retargetItems", favoritItems, 30);
