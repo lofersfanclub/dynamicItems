@@ -31,6 +31,6 @@ function checkCookie(callback) {
         callback(itemsArray);
     } else {
            setCookie("retargetItems", favoritItems, 30);
-           callback();
+           callback(itemsArray);
     }
 }
