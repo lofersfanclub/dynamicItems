@@ -30,7 +30,7 @@ function checkCookie(callback) {
         itemsArray = user.split(",");
         console.log(itemsArray);
         console.log("itemsArray");
-        return itemsArray;
+        callback();
     } else {
            setCookie("retargetItems", favoritItems, 30);
            callback();
