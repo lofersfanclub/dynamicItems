@@ -145,8 +145,8 @@ function checkCookie() {
     if (user != "") {
         alert("Welcome again " + user);
         itemsArray = user;
-        console.log("hello: " + itemsArray);
-        console.log("hello: " + testArray);
+        console.log(typeof itemsArray);
+        console.log(typeof testArray);
         matchItems();
     } else {
        user = prompt("Please enter your name:","");
