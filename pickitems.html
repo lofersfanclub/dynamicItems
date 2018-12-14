@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -17,19 +18,35 @@
 
 <h1>Pick items</h1>
 
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
-</label>
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
-</label>
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
-</label>
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1" value="option1">
+  <label class="custom-control-label" for="customCheck1">5235</label>
+</div>
+
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck2" value="option2">
+  <label class="custom-control-label" for="customCheck2">10395</label>
+</div>
+
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck3" value="option3">
+  <label class="custom-control-label" for="customCheck3">6973</label>
+</div>
+
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck4" value="option4">
+  <label class="custom-control-label" for="customCheck4">1528</label>
+</div>
+
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck5" value="option5">
+  <label class="custom-control-label" for="customCheck5">5222</label>
+</div>
+
 
 <p>
   <button type="button" class="btn btn-primary">Update cookie</button>
-  <button type="button" class="btn btn-default">Clear cookie</button>
+  <button type="button" class="btn btn-secondary">Clear cookie</button>
 </p>
 
 </body>
