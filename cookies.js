@@ -28,8 +28,6 @@ function checkCookie(callback) {
     var user=getCookie("retargetItems");
     if (user != "") {
         itemsArray = user.split(",");
-        console.log(itemsArray);
-        console.log("itemsArray");
         callback(itemsArray);
     } else {
            setCookie("retargetItems", favoritItems, 30);
