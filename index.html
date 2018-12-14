@@ -111,7 +111,6 @@ var items = {
 var id;
 
 var itemsArray = [];
-var testArray = [1528, 5222, 6973];
 
 var element = document.getElementById("carusel");
 
@@ -143,7 +142,6 @@ function getCookie(cname) {
 function checkCookie() {
     var user=getCookie("username");
     if (user != "") {
-        alert("Welcome again " + user);
         itemsArray = user.split(",");
         console.log(typeof itemsArray);
         console.log(typeof testArray);
