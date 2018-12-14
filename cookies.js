@@ -1,3 +1,6 @@
+var itemsArray = [];
+var favoritItems = [5222, 6973, 5235]
+
 function setCookie(cname,cvalue,exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
