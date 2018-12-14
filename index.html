@@ -144,7 +144,7 @@ function checkCookie() {
     var user=getCookie("username");
     if (user != "") {
         alert("Welcome again " + user);
-        itemsArray = user;
+        itemsArray = user.split(",");
         console.log(typeof itemsArray);
         console.log(typeof testArray);
         matchItems();
