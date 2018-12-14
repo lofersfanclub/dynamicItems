@@ -111,6 +111,7 @@ var items = {
 var id;
 
 var itemsArray = [];
+var favoritItems = [5222, 6973, 5235]
 
 var element = document.getElementById("carusel");
 
@@ -144,12 +145,11 @@ function checkCookie() {
     if (user != "") {
         itemsArray = user.split(",");
         console.log(typeof itemsArray);
-        console.log(typeof testArray);
         matchItems();
     } else {
-       user = prompt("Please enter your name:","");
+       // user = prompt("Please enter your name:","");
        if (user != "" && user != null) {
-           setCookie("username", user, 30);
+           setCookie("username", favoritItems, 30);
        }
     }
 }
