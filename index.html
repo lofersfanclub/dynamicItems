@@ -144,7 +144,8 @@ function checkCookie() {
     if (user != "") {
         alert("Welcome again " + user);
         itemsArray = user;
-        console.log(itemsArray);
+        console.log("hello: " + itemsArray);
+        matchItems();
     } else {
        user = prompt("Please enter your name:","");
        if (user != "" && user != null) {
@@ -154,10 +155,6 @@ function checkCookie() {
 }
 
 checkCookie();
-
-
-
-matchItems();
 
 function matchItems() {
   for (var item in itemsArray) {
