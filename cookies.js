@@ -24,7 +24,7 @@ function getCookie(cname) {
     return "";
 }
 
-function checkCookie() {
+function checkCookie(callback) {
     var user=getCookie("retargetItems");
     if (user != "") {
         itemsArray = user.split(",");
@@ -33,5 +33,6 @@ function checkCookie() {
         return itemsArray;
     } else {
            setCookie("retargetItems", favoritItems, 30);
+           callback();
     }
 }

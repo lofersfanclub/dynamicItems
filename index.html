@@ -83,11 +83,16 @@ var itemsArray = [];
 var element = document.getElementById("carusel");
 
 
-var cookie = checkCookie();
+var cookie = checkCookie(alertFinished);
+
+function alertFinished(){
+  alert('Finished my homework' + cookie);
+   console.log(cookie);
+}
 
 // in need to insert a callback function
 
- console.log(cookie);
+
 
 function matchItems() {
   for (var item in itemsArray) {
