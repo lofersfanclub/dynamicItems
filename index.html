@@ -85,9 +85,10 @@ var element = document.getElementById("carusel");
 
 var cookie = checkCookie(alertFinished);
 
-function alertFinished(){
+function alertFinished(items){
   alert('Finished my homework' + cookie);
-   console.log(cookie);
+  itemsArray = items;
+   console.log(itemsArray);
 }
 
 // in need to insert a callback function
