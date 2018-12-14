@@ -141,7 +141,7 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-    var user=getCookie("username");
+    var user=getCookie("retargetItems");
     if (user != "") {
         itemsArray = user.split(",");
         console.log(typeof itemsArray);
@@ -149,7 +149,7 @@ function checkCookie() {
     } else {
        // user = prompt("Please enter your name:","");
        // if (user != "" && user != null) {
-           setCookie("username", favoritItems, 30);
+           setCookie("retargetItems", favoritItems, 30);
        // }
     }
 }
