@@ -155,11 +155,11 @@ function giveMeTheCookies(cookieItems){
 for (var x in cookieItems) {
   console.log(cookieItems);
   for (var y in checkBoxArray)
-    if(y.value == x){
-      console.log("In cookie: " + x);
+    if(checkBoxArray[y].value == cookieItems[x]){
+      console.log("In cookie: " + checkBoxArray[y].value);
     }
     else{
-      console.log("not in cookie: " + x);
+      console.log("not in cookie: " + checkBoxArray[y].value);
     }
   }
 
