@@ -152,7 +152,10 @@ function clear(){
 checkCookie(giveMeTheCookies)
 
 function giveMeTheCookies(cookieItems){
-  console.log(cookieItems);
+for (i = 0; i < cookieItems.length; i++) {
+  console.log(cookieItems[i].value);
+  }
+
 }
 
 </script>
