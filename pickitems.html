@@ -34,7 +34,7 @@
     <div class="card">
       <div class="card-body">
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="customCheck1" value="option1">
+          <input type="checkbox" class="custom-control-input" id="customCheck1" value="5235">
           <label class="custom-control-label" for="customCheck1">5235</label>
         </div>
       </div>
@@ -47,7 +47,7 @@
     <div class="card">
       <div class="card-body">
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="customCheck2" value="option2">
+          <input type="checkbox" class="custom-control-input" id="customCheck2" value="10395">
           <label class="custom-control-label" for="customCheck2">10395</label>
         </div>
       </div>
@@ -60,7 +60,7 @@
     <div class="card">
       <div class="card-body">
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="customCheck3" value="option3">
+          <input type="checkbox" class="custom-control-input" id="customCheck3" value="6973">
           <label class="custom-control-label" for="customCheck3">6973</label>
         </div>
       </div>
@@ -73,7 +73,7 @@
     <div class="card">
       <div class="card-body">
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="customCheck4" value="option4">
+          <input type="checkbox" class="custom-control-input" id="customCheck4" value="1528">
           <label class="custom-control-label" for="customCheck4">1528</label>
         </div>
       </div>
@@ -85,7 +85,7 @@
     <div class="card">
       <div class="card-body">
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="customCheck5" value="option5">
+          <input type="checkbox" class="custom-control-input" id="customCheck5" value="5222">
           <label class="custom-control-label" for="customCheck5">5222</label>
         </div>
       </div>
@@ -97,10 +97,10 @@
 
 <div class="row">
 <div class="col-sm-6 text-center">
-  <button type="button" class="btn btn-primary">Update cookie</button>
+  <button id="update-btn" type="button" class="btn btn-primary">Update cookie</button>
 </div>
 <div class="col-sm-6 text-center">
-  <button type="button" class="btn btn-secondary">Clear cookie</button>
+  <button id="clear-btn" type="button" class="btn btn-secondary">Clear cookie</button>
 </div>
 </div>
 </div>
@@ -108,6 +108,42 @@
 </body>
 
 <script>
+
+
+
+var updateBtn = document.getElementById('update-btn');
+var clearBtn = document.getElementById('clear-btn');
+
+var customCheck1 = document.getElementById('customCheck1');
+var customCheck2 = document.getElementById('customCheck2');
+var customCheck3 = document.getElementById('customCheck3');
+var customCheck4 = document.getElementById('customCheck4');
+var customCheck5 = document.getElementById('customCheck5');
+
+var checkBoxArray = [customCheck1, customCheck2, customCheck3, customCheck4, customCheck5];
+var favoritItems = [];
+
+updateBtn.addEventListener('click', update);
+clearBtn.addEventListener('click', clear);
+
+function update(){
+  for (i = 0; i < checkBoxArray.length; i++) {
+    if(checkBoxArray[i].checked){
+        favoritItems.push(checkBoxArray[i].value);
+        console.log(favoritItems);
+        setCookie("retargetItems", [2345, 3495], 30);
+    }
+  }
+}
+
+function clear(){
+  console.log("clear");
+  var emptyArr = [];
+  setCookie("retargetItems", emptyArr, 30);
+}
+
+
+
 checkCookie(giveMeTheCookies)
 
 function giveMeTheCookies(cookieItems){
