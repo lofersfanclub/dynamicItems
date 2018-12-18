@@ -117,9 +117,11 @@ function matchItems() {
         var createdItem = document.getElementById(id);
         var title = document.createElement("p");
         var headline = document.createElement("h1");
+        var img = document.createElement("img");
         var cta = document.createElement("a");
         var nr = document.createElement("p");
         var titleText = document.createTextNode(obj.title);
+        var imgSrc = document.createTextNode(obj.src);
         var textNode = document.createTextNode(obj.description);
         var ctaTextNode = document.createTextNode(obj.cta);
         var bestNr = "Best nr " + id;
@@ -130,6 +132,7 @@ function matchItems() {
         }
         createdItem.appendChild(title);
         createdItem.appendChild(headline);
+        createdItem.appendChild(img);
         createdItem.appendChild(cta);
         createdItem.appendChild(nr);
 
@@ -140,6 +143,8 @@ function matchItems() {
 
         title.setAttribute("class", "name");
         headline.setAttribute("class", "description");
+        img.setAttribute("class", "img");
+        img.setAttribute("src", obj.imageSrc);
         cta.setAttribute("class", "cta");
         cta.setAttribute('href',obj.ctaHref);
         cta.setAttribute('target', '_blank');

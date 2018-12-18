@@ -22,6 +22,11 @@ a{
   letter-spacing: -1px;
 }
 
+.img{
+  width: 200px;
+  height: 200px;
+}
+
 .cta {
   display: inline-block;
   font-size: 15px;
