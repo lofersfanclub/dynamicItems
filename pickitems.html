@@ -152,8 +152,15 @@ function clear(){
 checkCookie(giveMeTheCookies)
 
 function giveMeTheCookies(cookieItems){
-for (i = 0; i < cookieItems.length; i++) {
-  console.log(cookieItems[i]);
+for (var x in cookieItems) {
+  console.log(x);
+  for (var y in checkBoxArray)
+    if(y[i].value == x){
+      console.log("In cookie: " + x);
+    }
+    else{
+      console.log("not in cookie: " + x);
+    }
   }
 
 }
