@@ -132,11 +132,10 @@ function update(){
   for (i = 0; i < checkBoxArray.length; i++) {
     if(checkBoxArray[i].checked){
         favoritItems.push(checkBoxArray[i].value);
-        if(i == checkBoxArray.length){
-          setCookie("retargetItems", favoritItems, 30);
-          console.log("set cookie");
-        }
-
+    }
+    if(i == checkBoxArray.length){
+      setCookie("retargetItems", favoritItems, 30);
+      console.log("set cookie");
     }
 
   }
