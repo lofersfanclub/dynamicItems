@@ -23,13 +23,11 @@ a{
 }
 
 .img{
-  display: block;
   width: 200px;
   height: 200px;
 }
 
 .cta {
-  display: inline-block;
   font-size: 15px;
   font-family: 'Arimo', sans-serif;
   color: #fff;
