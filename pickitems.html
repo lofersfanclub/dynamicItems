@@ -133,6 +133,7 @@ function update(){
     if(checkBoxArray[i].checked){
         favoritItems.push(checkBoxArray[i].value);
     }
+    console.log(i);
     if(i == checkBoxArray.length){
       setCookie("retargetItems", favoritItems, 30);
       console.log("set cookie");
