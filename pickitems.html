@@ -127,11 +127,16 @@ updateBtn.addEventListener('click', update);
 clearBtn.addEventListener('click', clear);
 
 function update(){
+  console.log("update click");
+  favoritItems = [];
   for (i = 0; i < checkBoxArray.length; i++) {
     if(checkBoxArray[i].checked){
         favoritItems.push(checkBoxArray[i].value);
-        console.log(favoritItems);
-        setCookie("retargetItems", [2345, 3495], 30);
+
+    }
+    if(i == checkBoxArray.length){
+      setCookie("retargetItems", favoritItems, 30);
+      console.log("set cookie");
     }
   }
 }
