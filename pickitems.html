@@ -153,7 +153,6 @@ checkCookie(giveMeTheCookies)
 
 function giveMeTheCookies(cookieItems){
 for (var x in cookieItems) {
-  console.log(cookieItems);
   for (var y in checkBoxArray)
     if(checkBoxArray[y].value == cookieItems[x]){
       console.log("In cookie: " + checkBoxArray[y].value);
