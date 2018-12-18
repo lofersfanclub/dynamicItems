@@ -1,5 +1,5 @@
 var itemsArray = [];
-var favoritItems = [5222, 6973, 5235, 10395]
+var favoritItems = []
 
 function setCookie(cname,cvalue,exdays) {
     var d = new Date();
